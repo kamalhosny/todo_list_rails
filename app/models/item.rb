@@ -1,4 +1,4 @@
 class Item < ApplicationRecord
-  belongs_to :list
+  belongs_to :user
   validates :content ,presence:true , length: { maximum: 100 }
 end

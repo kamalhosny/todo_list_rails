@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   def index
+    # byebug
+    # @items= current_user.items
     @items= Item.all
     respond_to do |format|
       format.json {render :json =>@items}
@@ -34,6 +36,6 @@ class ItemsController < ApplicationController
 
   private
 	def item_params
-		params.require(:item).permit(:content, :attachment, :done)
+		params.require(:item).permit(:content, :user_id, :done)
 	end
 end
